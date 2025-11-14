@@ -1,0 +1,42 @@
+---
+name: Clojure CI
+on:
+  push:
+    branches: [master, main]
+    paths: [clojure/**, .github/workflows/clojure-ci.yml]
+  pull_request:
+    branches: [master, ain]
+    paths: [clojure/**, .github/workflows/clojure-ci.yml]
+jobs:
+  clojure:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: clojure
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Set up Clojure CLI and clj-kondo
+        uses: DeLaGuardo/setup-clojure@13.4
+        with:
+          cli: latest
+          clj-kondo: latest
+      - name: Cache Maven and Clojure deps
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.m2/repository
+            ~/.gitlibs
+            .cpcache
+          key: ${{ runner.os }}-clj-${{ hashFiles('clojure/deps.edn') }}
+          restore-keys: |
+            ${{ runner.os }}-clj-
+      - name: Lint with clj-kondo
+        run: clj-kondo --lint src test
+      - name: Run tests (tools.build)
+        run: clojure -T:build test
