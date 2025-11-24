@@ -2,13 +2,23 @@
 name: Clojure CI
 on:
   push:
-    branches: [master, main]
-    paths: [clojure/**, .github/workflows/clojure-ci.yml]
   pull_request:
-    branches: [master, ain]
-    paths: [clojure/**, .github/workflows/clojure-ci.yml]
 jobs:
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      clojure: ${{ steps.filter.outputs.clojure }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: filter
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            clojure:
+              - 'clojure/**'
   clojure:
+    needs: changes
+    if: needs.changes.outputs.clojure == 'true'
     runs-on: ubuntu-latest
     defaults:
       run:
