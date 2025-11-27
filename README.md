@@ -3,10 +3,12 @@
 <details>
 <summary><strong>Chapter 1 — Building Abstractions with Procedures</strong></summary>
 
-**Notebook:**  
-🔗 [Open Chapter 1 in Jupyter / Binder](https://mybinder.org/v2/gh/IDilettant/sicp-solutions/HEAD?labpath=notebooks/chapter01.ipynb#ch-1)
+🔗 [Open in Jupyter / Binder](https://mybinder.org/v2/gh/IDilettant/sicp-solutions/HEAD?labpath=notebooks/chapter01.ipynb#ch-1)
 
 ### Exercises
+
+<details>
+<summary><strong>The Elements of Programming</strong></summary>
 
 - [Exercise 1.1](https://mybinder.org/v2/gh/IDilettant/sicp-solutions/HEAD?labpath=notebooks/chapter01.ipynb#ex-1-1)
 - [Exercise 1.2](https://mybinder.org/v2/gh/IDilettant/sicp-solutions/HEAD?labpath=notebooks/chapter01.ipynb#ex-1-2)
@@ -16,6 +18,12 @@
 - [Exercise 1.6](https://mybinder.org/v2/gh/IDilettant/sicp-solutions/HEAD?labpath=notebooks/chapter01.ipynb#ex-1-6)
 - [Exercise 1.7](https://mybinder.org/v2/gh/IDilettant/sicp-solutions/HEAD?labpath=notebooks/chapter01.ipynb#ex-1-7)
 - [Exercise 1.8](https://mybinder.org/v2/gh/IDilettant/sicp-solutions/HEAD?labpath=notebooks/chapter01.ipynb#ex-1-8)
+
+</details>
+
+<details>
+<summary><strong>Procedures as Black-Box Abstractions</strong></summary>
+
 - [Exercise 1.9](https://mybinder.org/v2/gh/IDilettant/sicp-solutions/HEAD?labpath=notebooks/chapter01.ipynb#ex-1-9)
 - [Exercise 1.10](https://mybinder.org/v2/gh/IDilettant/sicp-solutions/HEAD?labpath=notebooks/chapter01.ipynb#ex-1-10)
 - [Exercise 1.11](https://mybinder.org/v2/gh/IDilettant/sicp-solutions/HEAD?labpath=notebooks/chapter01.ipynb#ex-1-11)
@@ -47,6 +55,12 @@
 - [Exercise 1.37](https://mybinder.org/v2/gh/IDilettant/sicp-solutions/HEAD?labpath=notebooks/chapter01.ipynb#ex-1-37)
 - [Exercise 1.38](https://mybinder.org/v2/gh/IDilettant/sicp-solutions/HEAD?labpath=notebooks/chapter01.ipynb#ex-1-38)
 - [Exercise 1.39](https://mybinder.org/v2/gh/IDilettant/sicp-solutions/HEAD?labpath=notebooks/chapter01.ipynb#ex-1-39)
+
+</details>
+
+<details>
+<summary><strong>Procedures as Returned Values</strong></summary>
+
 - [Exercise 1.40](https://mybinder.org/v2/gh/IDilettant/sicp-solutions/HEAD?labpath=notebooks/chapter01.ipynb#ex-1-40)
 - [Exercise 1.41](https://mybinder.org/v2/gh/IDilettant/sicp-solutions/HEAD?labpath=notebooks/chapter01.ipynb#ex-1-41)
 - [Exercise 1.42](https://mybinder.org/v2/gh/IDilettant/sicp-solutions/HEAD?labpath=notebooks/chapter01.ipynb#ex-1-42)
@@ -54,5 +68,7 @@
 - [Exercise 1.44](https://mybinder.org/v2/gh/IDilettant/sicp-solutions/HEAD?labpath=notebooks/chapter01.ipynb#ex-1-44)
 - [Exercise 1.45](https://mybinder.org/v2/gh/IDilettant/sicp-solutions/HEAD?labpath=notebooks/chapter01.ipynb#ex-1-45)
 - [Exercise 1.46](https://mybinder.org/v2/gh/IDilettant/sicp-solutions/HEAD?labpath=notebooks/chapter01.ipynb#ex-1-46)
+
+</details>
 
 </details>
