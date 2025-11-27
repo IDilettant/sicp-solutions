@@ -1,33 +1,33 @@
 FROM ubuntu:22.04
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-    curl git make rlwrap python3 python3-pip openjdk-17-jdk ca-certificates && \
-    rm -rf /var/lib/apt/lists/*
-
-RUN curl -O https://download.clojure.org/install/linux-install-1.11.1.1413.sh && \
-    chmod +x linux-install-1.11.1.1413.sh && \
-    ./linux-install-1.11.1.1413.sh && \
-    rm linux-install-1.11.1.1413.sh
-
-RUN pip3 install --no-cache-dir jupyterlab
-
-RUN clojure -Sdeps '{:deps {io.github.clojupyter/clojupyter {:mvn/version "0.3.5"}}}' \
-    -m clojupyter.cmdline install
 
 ARG NB_USER=jovyan
 ARG NB_UID=1000
 ENV USER=${NB_USER}
 ENV HOME=/home/${NB_USER}
 
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+    curl git make rlwrap python3 python3-pip openjdk-17-jdk-headless \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN curl -L -O https://github.com/clojure/brew-install/releases/latest/download/linux-install.sh \
+    && chmod +x linux-install.sh \
+    && ./linux-install.sh \
+    && rm linux-install.sh
+
+RUN pip3 install --no-cache-dir jupyterlab
+
 RUN adduser --disabled-password \
     --gecos "Default user" \
     --uid ${NB_UID} \
     ${NB_USER}
 
+USER ${NB_USER}
 WORKDIR ${HOME}
-USER ${USER}
+
+RUN clojure -Sdeps '{:deps {io.github.clojupyter/clojupyter {:mvn/version "0.3.5"}} \
+    :mvn/repos {"central" {:url "https://repo1.maven.org/maven2/"} \
+    "clojars" {:url "https://repo.clojars.org"}}}' \
+    -m clojupyter.cmdline install
 
 COPY . ${HOME}
-USER root
-RUN chown -R ${NB_UID} ${HOME}
-USER ${NB_USER}
