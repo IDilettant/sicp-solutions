@@ -33,7 +33,6 @@
       ```
 
       ```bash
-      # run: solution
       make run ex=1-02
       ```
 
@@ -49,7 +48,6 @@
       ```
 
       ```bash
-      # run: test
       make test ex=1-02
       ```
 
