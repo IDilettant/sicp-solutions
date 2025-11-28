@@ -10,9 +10,13 @@ ENV NB_USER=${NB_USER}
 ENV NB_UID=${NB_UID}
 ENV HOME=/home/${NB_USER}
 
-COPY . ${HOME}
+WORKDIR ${HOME}
 
-RUN chown -R ${NB_UID} ${HOME}
+RUN mkdir -p ${HOME}/sicp-solutions
+
+COPY . ${HOME}/sicp-solutions
+
+RUN chown -R ${NB_UID} ${HOME}/sicp-solutions
 
 USER ${NB_USER}
-WORKDIR ${HOME}
+WORKDIR ${HOME}/sicp-solutions
